@@ -1,0 +1,29 @@
+get:
+  operationId: listEmployers
+  description: List all employers
+  tags:
+    - employers
+  parameters:
+    - $ref: "../parameters/query/limit.yml"
+    - $ref: "../parameters/query/offset.yml"
+  responses:
+    '200':
+      description: Employers list
+      content:
+        application/json:
+          schema:
+            type: array
+            items:
+              $ref: '#/components/schemas/Employer'
+    '400':
+      description: Invalid limit or offset supplied
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+    '404':
+      description: Employers not found
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'

@@ -1,0 +1,5 @@
+# Query parameters
+limit:
+  $ref: "../parameters/query/limit.yml"
+offset:
+  $ref: "../parameters/query/offset.yml"

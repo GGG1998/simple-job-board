@@ -1,0 +1,31 @@
+get:
+  summary: Detail an offer of job
+  operationId: showOfferById
+  tags:
+    - offers
+  parameters:
+    name: offerId
+    in: path
+    required: true
+    description: The Id of the offer
+    schema:
+      type: string
+  responses:
+    '200':
+      description: Offer detail
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Offer'
+    '400':
+      description: Invalid ID supplied
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error' 
+    '404':
+      description: Offer not found
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'

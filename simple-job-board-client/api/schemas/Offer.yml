@@ -1,0 +1,55 @@
+type: object
+required:
+  - id
+  - title
+  - description
+  - location
+  - employer
+  - active
+  - end_date
+  - categories
+  - created_at
+  - updated_at
+properties:
+  id:
+    type: integer
+    format: int32
+    description: The offer ID
+  title:
+    type: string
+    description: The offer title
+  description:
+    type: string
+    description: The offer description
+  location:
+    $ref: '#/components/schemas/Location'
+  employer:
+    $ref: "#/components/schemas/Employer"
+  salary_min:
+    type: number
+    format: float
+    description: The offer minimum salary
+  salary_max:
+    type: number
+    format: float
+    description: The offer minimum salary
+  active:
+    type: boolean
+    description: The offer status
+  end_date:
+    type: string
+    format: date-time
+    description: The offer valid date
+  categories:
+    type: array
+    items:
+      type: string
+    description: The offer categories
+  created_at:
+    type: string
+    format: date-time
+    description: The offer creation date
+  updated_at:
+    type: string
+    format: date-time
+    description: The offer last update date

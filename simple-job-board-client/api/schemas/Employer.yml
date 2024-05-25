@@ -1,0 +1,43 @@
+type: object
+required:
+  - id
+  - name
+  - social_links
+  - website
+  - logo
+  - description
+  - location
+  - created_at
+  - updated_at
+properties:
+  id:
+    type: integer
+    format: int32
+    description: The employer ID
+  name:
+    type: string
+    description: The employer name
+  social_links:
+    type: array
+    items:
+      type: string
+    description: The employer social links
+  website:
+    type: string
+    description: The employer website
+  logo:
+    type: string
+    description: The employer logo
+  description:
+    type: string
+    description: The employer description
+  location:
+    $ref: '#/components/schemas/Location'
+  created_at:
+    type: string
+    format: date-time
+    description: The employer creation date
+  updated_at:
+    type: string
+    format: date-time
+    description: The employer last update date

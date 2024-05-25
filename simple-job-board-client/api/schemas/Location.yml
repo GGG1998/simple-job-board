@@ -1,0 +1,27 @@
+type: object
+required:
+  - zip_code
+  - city
+  - state
+  - country
+  - address
+properties:
+  id:
+    type: integer
+    format: int32
+    description: The location ID
+  zip_code:
+    type: string
+    description: The location zip code
+  city:
+    type: string
+    description: The location city
+  state:
+    type: string
+    description: The location state
+  country:
+    type: string
+    description: The location country
+  address:
+    type: string
+    description: The location address

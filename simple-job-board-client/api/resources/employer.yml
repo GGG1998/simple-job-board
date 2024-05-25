@@ -1,0 +1,31 @@
+get:
+  summary: Detail an employer
+  operationId: showEmployerById
+  tags:
+    - employers
+  parameters:
+    name: employerId
+    in: path
+    required: true
+    description: The Id of the employer
+    schema:
+      type: string
+  responses:
+    '200':
+      description: Employer detail
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Employer'
+    '400':
+      description: Invalid ID supplied
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error' 
+    '404':
+      description: Employer not found
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/scomponents/schemas/Error'

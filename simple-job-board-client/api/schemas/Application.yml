@@ -1,0 +1,23 @@
+type: object
+properties:
+  id:
+    type: string
+    description: The Id of the application
+  offerId:
+    type: string
+    description: The Id of the offer
+  employerId:
+    type: string
+    description: The Id of the employer
+
+  status:
+    type: string
+    description: The status of the application
+  createdAt:
+    type: string
+    format: date-time
+    description: The date of creation of the application
+  updatedAt:
+    type: string
+    format: date-time
+    description: The date of last update of the application

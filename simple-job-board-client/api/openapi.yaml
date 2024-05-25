@@ -1,0 +1,29 @@
+openapi: "3.1.0"
+info:
+  version: 1.0.0
+  title: Simple Job Board Offers
+  description: Simple panel of offers with option filtering and view on employer's profile
+  license:
+    name: MIT
+servers:
+  - url: http://localhost:8000/v1
+tags:
+  - name: offers
+  - name: employers
+paths:
+  /offers:
+    $ref: "./resources/offers.yaml"
+  /offers/{offerId}:
+    $ref: "./resources/offer.yaml"
+  /offers/{offerId}/apply:
+    $ref: "./resources/apply.yaml"
+  /employers:
+    $ref: "./resources/employers.yaml"
+  /employers/{employerId}:
+    $ref: "./resources/employer.yaml"
+
+components:
+  schemas:
+    $ref: "./schemas/_index.yaml"
+  # responses:
+    # $ref: "./responses/_index.yaml"

@@ -1,0 +1,9 @@
+Employer:
+  $ref: './employer.yml'
+Offer:
+  $ref: './offer.yml'
+Location:
+  $ref: './location.yml'
+
+Error:
+  $ref: './error.yml'

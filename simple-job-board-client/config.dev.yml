@@ -1,0 +1,9 @@
+
+http_server_host: "127.0.0.1"
+http_server_port: 8080
+postgres_host: "localhost"
+postgres_port: 5432
+postgres_user: "root"
+postgres_password: "Secret123"
+postgres_db: "postgres"
+postgres_ssl_mode: "disable"

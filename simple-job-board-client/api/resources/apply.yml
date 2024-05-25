@@ -1,0 +1,80 @@
+get:
+  summary: Detail an application
+  operationId: showApplicationById
+  tags:
+    - applications
+  parameters:
+    name: applicationId
+    in: path
+    required: true
+    description: The Id of the application
+    schema:
+      type: string
+  responses:
+    '200':
+      description: Application detail
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Application'
+    '400':
+      description: Invalid ID supplied
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error' 
+    '404':
+      description: Application not found
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+post:
+  summary: Apply to an offer
+  operationId: applyToOffer
+  tags:
+    - applications
+  parameters:
+    - name: offerId
+      in: path
+      required: true
+      description: The Id of the offer
+      schema:
+        type: string
+    - name: body
+      in: body
+      required: true
+      description: Application data
+      schema:
+        $ref: '#/components/schemas/Application'
+  responses:
+    '201':
+      description: Application created
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Application'
+    '400':
+      description: Invalid ID supplied
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error' 
+    '404':
+      description: Offer not found
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+    '409':
+      description: Application already exists
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+    '422':
+      description: Unprocessable entity
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'

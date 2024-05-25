@@ -1,0 +1,8 @@
+get:
+  operationId: listOffers
+  description: List all offers
+  tags:
+    - offers
+  parameters:
+    - $ref: "../parameters/query/limit.yaml"
+    - $ref: "../parameters/query/offset.yaml"
